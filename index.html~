@@ -1,0 +1,38 @@
+<html>
+<head><title>Research Study: Welcome!</title>
+
+<body>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<style type="text/css" media="all">@import "css/drupalit.css";</style>
+<style type="text/css" media="all">@import "css/content.css";</style>
+<style type="text/css" media="all">@import "css/node.css";</style>
+<style type="text/css" media="all">@import "css/defaults.css";</style>
+<style type="text/css" media="all">@import "css/system.css";</style>
+<style type="text/css" media="all">@import "css/userhttp://htmledit.squarefree.com/.css";</style>
+<style type="text/css" media="all">@import "css/fieldgroup.css";</styl<style type="text/css" media="all">@import 
+
+"css/date.css";</style>
+<style type="text/css" media="all">@import "css/acidfree.css";</style>
+<style type="text/css" media="all">@import "css/style.css";</style></head>
+
+<div id="page_content" style="margin-right:160px;  margin-left: 160px;">
+
+
+    <br><br><br>
+    <table align="center" cellpadding="10">
+    <tr><td align="center"><img src="saxelab_logo.png" alt="The Saxe Lab" width="168" height="100"></td>
+    <td align="center"><img src="mit.gif" alt="MIT" width="154" height="84"></td></tr></table>    
+    <table align="center" cellpadding="10">
+	
+<p style="text-align:center"><font size="4"> <b>Hello! Thank you for participating in our research. Click to continue to instructions!</font></p></b>
+
+ <form action="firstQ.py" method="submit">
+<center>
+<input type="hidden" name="qindex" value="0">
+<input type="submit" value="Continue" /></center>
+</form>
+   
+<br><br>
+</div>
+</body>
+</html>
