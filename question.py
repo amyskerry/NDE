@@ -50,10 +50,10 @@ else:
         qname=jorie
         question="%s's boyfriend bought her a necklace. she really liked it. %s smiled"
         nameargs=[]
-        for ltr in question:
-        	if ltr == '%':
-        		nameargs.append(qname)
-        question=question % (*nameargs)
+        #for ltr in question:
+        #	if ltr == '%':
+        #		nameargs.append(qname)
+        #question=question % (*nameargs)
         qindex=str(qindex)
         qnumlist=qnums[0]   
         count=0
