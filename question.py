@@ -49,7 +49,7 @@ else:
         question=questions[int(qnum)-1]
         qname='jorie'
         question="NAMEVAR's boyfriend bought her a necklace. she really liked it. NAMEVAR smiled"
-        question.replace('NAMEVAR', qname)
+        question=question.replace('NAMEVAR', qname)
         qindex=str(qindex)
         qnumlist=qnums[0]   
         count=0
