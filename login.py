@@ -91,16 +91,16 @@ print '''
     }
     </style>
 
-<p style="text-align:center"><font size="5"><br><br> <b>Hello! Thank you for signing up to do our study!</font></p></b>
+<p style="text-align:center"><font size="5"><br><br> <b>Hello! Thank you for participating in our research!</font></p></b>
 
-<p style="text-align:left;margin-left:20px;margin-right:20px"><font size="4">
-instruct line 1
+<p style="text-align:left;margin-left:30px;margin-right:20px"><font size="4">
+In this study, you will be viewing a series of silent video clips and be continually rating some aspect of the video. You will see a sliding scale below the video clip, and will be able to move the scale continuously as you watch the clip, recording the extent to which the movie currently involves the dimension or category we assign to you.
 <br><br>
-instruct line 2
+This task may feel confusing and subjective. That is okay. Your job is simply to provide your best judgment of whether the movie scene you are currently viewing involves the dimsension or category you are rating. You will only see the clips once, so you will need to make your judgements quickly, and respond on the fly as you watch the clips. We will continuously record your responses as you move around the rating scale.
 <br><br>
-instruct line 3
+The data collected from this HIT will be used as part of a scientific research project. Your decision to complete this HIT is voluntary. We will not collect identifying information. Other than your responses, the only information we will have is the time at which you completed the survey and the amount of time you spent to complete it. Your data may be used in analyses presented at scientific meetings or published in scientific journals. Continuing with this study indicates that you are at least 18 years of age, and agree to complete this HIT voluntarily.
 <br><br>
-<b> if you accept these conditions and are ready to begin, please fill in your username and click below </b>
+<b> If you accept these conditions and are ready to begin, please fill in your Subject ID (provided in your MTURK HIT) and click below. By continuing, you are providing consent to participate in this study. </b>
 <br><br>
 </div>
 </body>
