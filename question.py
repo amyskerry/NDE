@@ -48,12 +48,13 @@ else:
         qnum=qnums[qindex-1]
         question=questions[int(qnum)-1]
         qname='jorie'
-        question="%s's boyfriend bought her a necklace. she really liked it. %s smiled"
-        nameargs=['jorie', 'jorie']
-        #for ltr in question:
-        #	if ltr == '%':
-        #		nameargs.append(qname)
-        question=question % (nameargs)
+        question="{}s's boyfriend bought her a necklace. she really liked it. {}s smiled"
+        
+        for ltr in question:
+        	if ltr == '%':
+        		nameargs.append(qname)
+        nameargs=['jorie', 'tina']
+        question=question.format(*nameargs)
         qindex=str(qindex)
         qnumlist=qnums[0]   
         count=0
