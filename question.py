@@ -53,7 +53,7 @@ else:
         #for ltr in question:
         #	if ltr == '%':
         #		nameargs.append(qname)
-        question=question % (**nameargs)
+        question=question % (nameargs)
         qindex=str(qindex)
         qnumlist=qnums[0]   
         count=0
