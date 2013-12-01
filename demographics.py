@@ -26,17 +26,18 @@ subjid = myform['subjid'].value
 qindex=myform['qindex'].value
 qnums=myform['qnums'].value
 keycode=myform['keycode'].value
-qnums=qnums.split(",")
+qnums=eval(qnums)
 qindex=int(qindex)+1
 
 #print "<p>these are the ids: %s </p>" %(theids)
 herresponse=myform['response'].value
 #print "<p>previous response: %s </p>" %(herresponse)
 
-lastQ=qnums[int(qindex)-2]
+lastQ=str(qnums[int(qindex)-2])
 formindex=myform['rownum'].value 
 lastresponse=myform['response'].value
 qvar='q'+ lastQ
+#print "%s" % (qvar)
 qvarw1=qvar+'otherword1'
 qvarw2=qvar+'otherword2'
 wlist=[qvarw1,qvarw2]

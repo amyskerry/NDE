@@ -5,7 +5,7 @@ import cgitb, cgi, MySQLdb, ast
 import cPickle as p
 from random import randint, shuffle
 from ast import literal_eval
-from qs import questions
+from qs import questions, names
 from slist import subjects, keycodes
 
 myform=cgi.FieldStorage()
@@ -38,27 +38,27 @@ if match==0:
 	print "The subject ID you have provided is incorrect. Please return to the previous page and re-enter the subject ID provided on your Mechanical Turk start page."
 else:
         #print "your id is correct <br>"
-        qnums=myform['qnums'].value
-        qnums=qnums.split(",")
+        qnums=eval(myform['qnums'].value)
+	qnums=map(lambda x:int(x), qnums)
+	#qnums=qnums.split(",")
         #print "<p>these are the ids: %s </p>" %(theids)
         #print "<p>these are the qnums: %s </p>" %(qnums)
         qindex=myform['qindex'].value
         qindex=int(qindex)+1
         #print "<p>qindex: %s </p>" %(qindex)
         qnum=qnums[qindex-1]
-        question=questions[int(qnum)-1]
-        qname='jorie'
-        question="NAMEVAR's boyfriend bought her a necklace. she really liked it. NAMEVAR smiled"
+        question=questions[qnum-1]
+        qname=names[qnum-1]
         question=question.replace('NAMEVAR', qname)
         qindex=str(qindex)
-        qnumlist=qnums[0]   
-        count=0
-        for q in qnums:
-                count=count+1
-                if count<len(qnums):
-                        qnumlist=qnumlist+','+qnums[count]
+        #qnumlist=qnums[0]   
+        #count=0
+        #for q in qnums:
+        #        count=count+1
+        #        if count<len(qnums):
+        #                qnumlist=qnumlist+','+qnums[count]
         #print "<p>these are the new qnums: %s </p>" %(qnumlist)
-        
+        qnumlist=str(qnums)
         if int(qindex)==1:
        		#add the person to the database:  "insert" command for new rows
        		cursor.execute('insert into demographics_tbl (subjid) values (%s)',str(subjid))
@@ -70,7 +70,7 @@ else:
        		formindex=thisvar
        		#print "<p> type: %s </p>" % thisvar
         else:
-       		lastQ=qnums[int(qindex)-2]
+       		lastQ=str(qnums[int(qindex)-2])
        		keycode=myform['keycode'].value
 		formindex=myform['rownum'].value
        		lastresponse=myform['response'].value

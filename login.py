@@ -114,6 +114,9 @@ for q in qnums:
 	count=count+1
 	if count<len(qnums):
 		qnumlist=qnumlist+','+qnums[count]
+
+#print "<p>these are the new qnums: %s </p>" %(qnumlist)
+qnumlist=str(qnums)
 #print "<p>these are the new qnums: %s </p>" %(qnumlist)
  
 print '''
