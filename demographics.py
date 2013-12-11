@@ -28,7 +28,7 @@ qnums=myform['qnums'].value
 keycode=myform['keycode'].value
 qnums=eval(qnums)
 qindex=int(qindex)+1
-
+emoans=emoanswers[qnum-1]
 #print "<p>these are the ids: %s </p>" %(theids)
 herresponse=myform['response'].value
 #print "<p>previous response: %s </p>" %(herresponse)
@@ -36,12 +36,16 @@ herresponse=myform['response'].value
 lastQ=str(qnums[int(qindex)-2])
 formindex=myform['rownum'].value 
 lastresponse=myform['response'].value
+lastanswer=myform['correctans'].value
 qvar='q'+ lastQ
+qvarans='correctA'+lastQ
 #print "%s" % (qvar)
 qvarw1=qvar+'otherword1'
 qvarw2=qvar+'otherword2'
 wlist=[qvarw1,qvarw2]
 sql='update NDE_table set ' +qvar +' ="'+lastresponse+'" where rownum="'+formindex+'"'
+cursor.execute(sql)
+sql='update NDE_table set ' +qvarans +' ="'+lastanswer+'" where rownum="'+formindex+'"'
 cursor.execute(sql)
 word=0
 for x in ['otherword1', 'otherword2']:

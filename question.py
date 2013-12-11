@@ -5,7 +5,7 @@ import cgitb, cgi, MySQLdb, ast
 import cPickle as p
 from random import randint, shuffle
 from ast import literal_eval
-from qs import questions, names, emolist
+from qs import questions, names, emolist, emoanswers
 from slist import subjects, keycodes
 import math
 
@@ -49,6 +49,7 @@ else:
         #print "<p>qindex: %s </p>" %(qindex)
         qnum=qnums[qindex-1]
         question=questions[qnum-1]
+	emoans=emoanswers[qnum-1]
         qname=names[qnum-1]
         question=question.replace('NAMEVAR', qname)
         qindex=str(qindex)
@@ -75,11 +76,15 @@ else:
        		keycode=myform['keycode'].value
 		formindex=myform['rownum'].value
        		lastresponse=myform['response'].value
+		lastanswer=myform['correctans'].value
        		qvar='q'+ lastQ
+		qvarans='correctA'+lastQ
        		qvarw1=qvar+'otherword1'
        		qvarw2=qvar+'otherword2'
        		wlist=[qvarw1,qvarw2]
        		sql='update NDE_table set ' +qvar +' ="'+lastresponse+'" where rownum="'+formindex+'"'
+       		cursor.execute(sql)
+       		sql='update NDE_table set ' +qvarans +' ="'+lastanswer+'" where rownum="'+formindex+'"'
        		cursor.execute(sql)
        		word=0
        		for x in ['otherword1', 'otherword2']:
@@ -178,12 +183,13 @@ else:
 	make_checkarray(emolist)
 	print '''
 	<br><br>
-	<p> If you feel that the situation is better described by another <br> word, please list alternative words here (optional). </p>
+	<p> If you feel that the situation is equally well described by a second word, or better described  <br> by a word that is not listed, please list alternative words here (optional). </p>
         <input type="text" name="otherword1" >
         <br><input type="text" name="otherword2">
         <br><br>
         <input type="hidden" name="subjid" value="'''+subjid+'''">
-        <input type="hidden" name="keycode" value="'''+keycode+'''">
+	<input type="hidden" name="correctans" value="'''+emoans+'''">
+        <input type="hidden" name="keycode" value="'''+keycode+'''">       	
         <input type="hidden" name="qindex" value="'''+qindex+'''">
         <input type="hidden" name="qnums" value="'''+qnumlist+'''"> 
         <input type="hidden" name="rownum" value="'''+formindex+'''"> 	
