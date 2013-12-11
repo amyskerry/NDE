@@ -141,7 +141,7 @@ else:
 		nextthing='demographics.py'       	
 	#print "main loop"
        	print "<center><b>Question %s/%s:</b><br><br>" % (qindex, len(questions))
-       	print "<center>%s. <br><br>How does the character feel in this situation? <br> " % (question)
+       	print "<center>%s <br><br>How does the character feel in this situation? <br> " % (question)
        	print '''
         <div id="page_content" align="center">
         <form name="myform" action="%s" method="submit" onSubmit="return validate(myform)">
@@ -154,6 +154,7 @@ else:
 			numcols=numemos
 		else:
 			numcols=math.floor(math.sqrt(len(emolist)))
+		numcols=3 #this will be prettier for this one
 		buckets=[[] for i in range(0,numcols)]
 		for n, emo in enumerate(emotionlist):
 			col=int(n%numcols)
