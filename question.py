@@ -112,7 +112,16 @@ else:
     		text-align: center;
 		display:inline-block;	
 	}
-	label { 		 
+	.questiondiv {
+	  height:100px; width:75%; 
+	  color:white;
+	  //border-color:maroon; 
+	  //border-style:solid; 
+	  //border-width:1px; 
+	  //float:left; 
+	  background-color:#4852B7
+	}
+	.label { 		 
 		 margin-left: 15px;
 		 margin-right: 15px;
 
@@ -141,7 +150,7 @@ else:
 		nextthing='demographics.py'       	
 	#print "main loop"
        	print "<center><b>Question %s/%s:</b><br><br>" % (qindex, len(questions))
-       	print "<center>%s <br><br>How does the character feel in this situation? <br> " % (question)
+       	print "<div class=questiondiv><center>%s <br><br>How does the character feel in this situation? <br></div> " % (question)
        	print '''
         <div id="page_content" align="center">
         <form name="myform" action="%s" method="submit" onSubmit="return validate(myform)">
