@@ -12,7 +12,7 @@ form=cgi.FieldStorage()
 cgitb.enable()
 
 mydatabase="aesbehave"
-mytable="demographics_tbl"
+mytable="NDE_table"
 
 #log into the database
 cursor = MySQLdb.connect(host="localhost",user="askerry",passwd="password",db="aesbehave").cursor()
@@ -30,15 +30,15 @@ gender = form['gender'].value
 #add the person to the database:  "insert" command for new rows
 
 # store data onto server:  "update" commands to add data to existing row
-cursor.execute('update demographics_tbl set age="'+age+'" where rownum="'+formindex+'"')
-cursor.execute('update demographics_tbl set gender="'+gender+'" where rownum="'+formindex+'"')
-cursor.execute('update demographics_tbl set submitdate="'+datevar+'" where rownum="'+formindex+'"')
+cursor.execute('update NDE_table set age="'+age+'" where rownum="'+formindex+'"')
+cursor.execute('update NDE_table set gender="'+gender+'" where rownum="'+formindex+'"')
+cursor.execute('update NDE_table set submitdate="'+datevar+'" where rownum="'+formindex+'"')
 
 
 for x in ['country','city','thoughts']:
     try:
         it = form[x].value
-        cursor.execute('update demographics_tbl set '+x+'="'+it+'" where rownum="'+formindex+'"')
+        cursor.execute('update NDE_table set '+x+'="'+it+'" where rownum="'+formindex+'"')
     except: pass
 
 

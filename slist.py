@@ -1,2 +1,2 @@
-subjects=['s1', 's2', 's3', 's4', 's5']
-keycodes=['11111', '22222', '3x3x3x', '44444', '55x5x']
+subjects=['NDE_r1a_emrat_01', 'NDE_r1a_emrat_02', 'NDE_r1a_emrat_03', 'NDE_r1a_emrat_04', 'NDE_r1a_emrat_05', 'NDE_r1a_emrat_06', 'NDE_r1a_emrat_07', 'NDE_r1a_emrat_08', 'NDE_r1a_emrat_09', 'NDE_r1a_emrat_10', 'NDE_r1a_emrat_11', 'NDE_r1a_emrat_12', 'NDE_r1a_emrat_13', 'NDE_r1a_emrat_14', 'NDE_r1a_emrat_15', 'NDE_r1a_emrat_16', 'NDE_r1a_emrat_17', 'NDE_r1a_emrat_18', 'NDE_r1a_emrat_19', 'NDE_r1a_emrat_20']
+keycodes=['x442185152emrat00x', 'x436424411emrat10x', 'x603427188emrat20x', 'x796462709emrat30x', 'x604808973emrat40x', 'x29016948emrat50x', 'x334008376emrat60x', 'x383276483emrat70x', 'x670585938emrat80x', 'x300735781emrat90x', 'x14025946emrat100x', 'x23795535emrat110x', 'x457067868emrat120x', 'x900849171emrat130x', 'x682853770emrat140x', 'x524214155emrat150x', 'x152277491emrat160x', 'x198390971emrat170x', 'x126486333emrat180x', 'x7125826emrat190x']

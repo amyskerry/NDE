@@ -41,7 +41,7 @@ qvar='q'+ lastQ
 qvarw1=qvar+'otherword1'
 qvarw2=qvar+'otherword2'
 wlist=[qvarw1,qvarw2]
-sql='update demographics_tbl set ' +qvar +' ="'+lastresponse+'" where rownum="'+formindex+'"'
+sql='update NDE_table set ' +qvar +' ="'+lastresponse+'" where rownum="'+formindex+'"'
 cursor.execute(sql)
 word=0
 for x in ['otherword1', 'otherword2']:
@@ -49,7 +49,7 @@ for x in ['otherword1', 'otherword2']:
 	try:
 		it = myform[x].value
 		newqvar=wlist[word-1]
-		newsql='update demographics_tbl set '+newqvar+'="'+it+'" where rownum="'+formindex+'"'
+		newsql='update NDE_table set '+newqvar+'="'+it+'" where rownum="'+formindex+'"'
 		cursor.execute(newsql)
         except: pass
 

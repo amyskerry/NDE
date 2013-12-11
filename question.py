@@ -62,8 +62,8 @@ else:
         qnumlist=str(qnums)
         if int(qindex)==1:
        		#add the person to the database:  "insert" command for new rows
-       		cursor.execute('insert into demographics_tbl (subjid) values (%s)',str(subjid))
-       		formindex=cursor.execute("SELECT MAX(rownum) AS formindex FROM demographics_tbl")
+       		cursor.execute('insert into NDE_table (subjid) values (%s)',str(subjid))
+       		formindex=cursor.execute("SELECT MAX(rownum) AS formindex FROM NDE_table")
        		formindex = cursor.fetchone()
        		#print "<p> %s </p>" % (formindex)
        		thisvar=str(formindex)
@@ -79,7 +79,7 @@ else:
        		qvarw1=qvar+'otherword1'
        		qvarw2=qvar+'otherword2'
        		wlist=[qvarw1,qvarw2]
-       		sql='update demographics_tbl set ' +qvar +' ="'+lastresponse+'" where rownum="'+formindex+'"'
+       		sql='update NDE_table set ' +qvar +' ="'+lastresponse+'" where rownum="'+formindex+'"'
        		cursor.execute(sql)
        		word=0
        		for x in ['otherword1', 'otherword2']:
@@ -87,7 +87,7 @@ else:
                		try:
                        		it = myform[x].value
                        		newqvar=wlist[word-1]
-                       		newsql='update demographics_tbl set '+newqvar+'="'+it+'" where rownum="'+formindex+'"'
+                       		newsql='update NDE_table set '+newqvar+'="'+it+'" where rownum="'+formindex+'"'
                        		cursor.execute(newsql)
                		except: pass
         ### css setup
