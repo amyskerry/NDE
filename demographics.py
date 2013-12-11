@@ -5,6 +5,7 @@ import cgitb, cgi, MySQLdb, ast
 import cPickle as p
 from random import randint, shuffle
 from ast import literal_eval
+from qs import emoanswers
 
 myform=cgi.FieldStorage()
 cgitb.enable()
@@ -28,7 +29,7 @@ qnums=myform['qnums'].value
 keycode=myform['keycode'].value
 qnums=eval(qnums)
 qindex=int(qindex)+1
-emoans=emoanswers[qnum-1]
+emoans=emoanswers[qnums[int(qindex)-2]]
 #print "<p>these are the ids: %s </p>" %(theids)
 herresponse=myform['response'].value
 #print "<p>previous response: %s </p>" %(herresponse)
