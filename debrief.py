@@ -32,7 +32,7 @@ gender = form['gender'].value
 # store data onto server:  "update" commands to add data to existing row
 cursor.execute('update NDE_table set age="'+age+'" where rownum="'+formindex+'"')
 cursor.execute('update NDE_table set gender="'+gender+'" where rownum="'+formindex+'"')
-cursor.execute('update NDE_table set submitdate="'+datevar+'" where rownum="'+formindex+'"')
+cursor.execute('update NDE_table set submission_date="'+datevar+'" where rownum="'+formindex+'"')
 
 
 for x in ['country','city','thoughts']:
