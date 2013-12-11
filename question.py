@@ -50,7 +50,7 @@ else:
         qnum=qnums[qindex-1]
         question=questions[qnum-1]
 	emoans=emoanswers[qnum-1]
-        qname=names[qnum-1]
+        qname=names[qindex-1]
         question=question.replace('NAMEVAR', qname)
         qindex=str(qindex)
         #qnumlist=qnums[0]   
@@ -155,7 +155,7 @@ else:
 		nextthing='demographics.py'       	
 	#print "main loop"
        	print "<center><b>Question %s/%s:</b><br><br>" % (qindex, len(questions))
-       	print "<div class=questiondiv><center>%s <br><br>How does the character feel in this situation? <br></div> " % (question)
+       	print "<div class=questiondiv><center>%s <br><br>How does %s feel in this situation? <br></div> " % (question,qname)
        	print '''
         <div id="page_content" align="center">
         <form name="myform" action="%s" method="submit" onSubmit="return validate(myform)">
