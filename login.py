@@ -5,7 +5,7 @@ import cgitb, cgi, MySQLdb, ast
 import cPickle as p
 from random import randint, shuffle
 from ast import literal_eval
-from qs import questions
+from qs import questions, blacklist
 
 myform=cgi.FieldStorage()
 cgitb.enable()
@@ -17,11 +17,18 @@ print 'Content-type:text/html\n\n'
 theids=myform.keys()
 #print "<p>these are the ids: %s </p>" %(theids)
 qnums=[]
-qnumber=0
-for q in questions:
-	qnumber=qnumber+1
-	qnums.append(str(qnumber))
-shuffle(qnums) 
+for qn, q in enumerate(questions):
+	if qn==85! and qn !=86:#these are the check questions
+		qnums.append(str(qn+1))
+for bl in blacklist:
+	blnum=bl.remove('q')
+	qnums.remove(blnum)
+shuffle(qnums)
+qnums.insert(6,str(86))
+qnums.insert(16,str(87)) #build in exact values for the check questions
+#qnums.insert(6,str(len(questions)-1))
+#qnums.insert(16,str(len(questions))) #assumes the check questions are the last two in questions
+ 
 qindex=myform['qindex'].value
 qindex=int(qindex)
 ### css setup

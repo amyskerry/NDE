@@ -49,6 +49,8 @@ else:
         #print "<p>qindex: %s </p>" %(qindex)
         qnum=qnums[qindex-1]
         question=questions[qnum-1]
+	#totalqpersubj=len(questions)
+	totalqpersubj=20
 	emoans=emoanswers[qnum-1]
         qname=names[qindex-1]
         question=question.replace('NAMEVAR', qname)
@@ -149,12 +151,12 @@ else:
 	'''
         ####end of setup
 	nextthing='question.py'
-        if int(qindex)<len(questions):
+        if int(qindex)<totalqpersubj:
 		nextthing='question.py'
 	else:
 		nextthing='demographics.py'       	
 	#print "main loop"
-       	print "<center><b>Question %s/%s:</b><br><br>" % (qindex, len(questions))
+       	print "<center><b>Question %s/%s:</b><br><br>" % (qindex, totalqpersubj)
        	print "<div class=questiondiv><center>%s <br><br>How does %s feel in this situation? <br></div> " % (question,qname)
        	print '''
         <div id="page_content" align="center">
