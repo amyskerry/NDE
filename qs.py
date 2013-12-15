@@ -45,3 +45,4 @@ stimfile='NDE_stims.csv'
 configfile='config.csv'
 [emolist, names]=getconfiguration(configfile)
 [questions, emoanswers]=getquestions(stimfile)
+blacklist=['q8', 'q15', 'q22', 'q26', 'q30', 'q32', 'q38', 'q40', 'q41', 'q45', 'q46', 'q47', 'q54', 'q64', 'q67', 'q73', 'q75', 'q76', 'q79']
