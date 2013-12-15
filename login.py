@@ -18,10 +18,10 @@ theids=myform.keys()
 #print "<p>these are the ids: %s </p>" %(theids)
 qnums=[]
 for qn, q in enumerate(questions):
-	if qn==85! and qn !=86:#these are the check questions
+	if qn!=85 and qn !=86:#these are the check questions
 		qnums.append(str(qn+1))
 for bl in blacklist:
-	blnum=bl.remove('q')
+	blnum=bl[1:]
 	qnums.remove(blnum)
 shuffle(qnums)
 qnums.insert(6,str(86))

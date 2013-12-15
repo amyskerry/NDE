@@ -120,7 +120,7 @@ else:
 		display:inline-block;	
 	}
 	.questiondiv {
-	  height:100px; width:75%; 
+	  height:115px; width:75%; 
 	  color:white;
 	  //border-color:maroon; 
 	  //border-style:solid; 
@@ -170,7 +170,7 @@ else:
 			numcols=numemos
 		else:
 			numcols=math.floor(math.sqrt(len(emolist)))
-		numcols=3 #this will be prettier for this one
+		numcols=4 #this will be prettier for this one
 		buckets=[[] for i in range(0,numcols)]
 		for n, emo in enumerate(emotionlist):
 			col=int(n%numcols)
