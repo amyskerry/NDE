@@ -28,7 +28,7 @@ qnums.insert(6,str(86))
 qnums.insert(16,str(87)) #build in exact values for the check questions
 #qnums.insert(6,str(len(questions)-1))
 #qnums.insert(16,str(len(questions))) #assumes the check questions are the last two in questions
- 
+#print qnums 
 qindex=myform['qindex'].value
 qindex=int(qindex)
 ### css setup
