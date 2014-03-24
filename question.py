@@ -55,6 +55,7 @@ else:
         qname=names[qindex-1]
         question=question.replace('NAMEVAR', qname)
         qindex=str(qindex)
+        print qindex
         #qnumlist=qnums[0]   
         #count=0
         #for q in qnums:
@@ -170,7 +171,7 @@ else:
 			numcols=numemos
 		else:
 			numcols=math.floor(math.sqrt(len(emolist)))
-		numcols=4 #this will be prettier for this one
+		numcols=3 #this will be prettier for this one
 		buckets=[[] for i in range(0,numcols)]
 		for n, emo in enumerate(emotionlist):
 			col=int(n%numcols)

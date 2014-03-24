@@ -3,9 +3,11 @@
 import cgitb, cgi, MySQLdb, ast
 #import cgitb, cgi, ast
 import cPickle as p
+import random
 from random import randint, shuffle
 from ast import literal_eval
 from qs import questions, blacklist
+import datetime
 
 myform=cgi.FieldStorage()
 cgitb.enable()
@@ -17,15 +19,19 @@ print 'Content-type:text/html\n\n'
 theids=myform.keys()
 #print "<p>these are the ids: %s </p>" %(theids)
 qnums=[]
+myseed=datetime.datetime.now()
+myseed=myseed.second*myseed.month+myseed.month*myseed.hour
+random.seed(myseed)
 for qn, q in enumerate(questions):
-	if qn!=85 and qn !=86:#these are the check questions
+	if qn!=200 and qn !=201:#these are the check questions
 		qnums.append(str(qn+1))
 for bl in blacklist:
 	blnum=bl[1:]
 	qnums.remove(blnum)
 shuffle(qnums)
-qnums.insert(6,str(86))
-qnums.insert(16,str(87)) #build in exact values for the check questions
+print qnums
+qnums.insert(7,str(201))
+qnums.insert(17,str(202)) #build in exact values for the check questions
 #qnums.insert(6,str(len(questions)-1))
 #qnums.insert(16,str(len(questions))) #assumes the check questions are the last two in questions
 #print qnums 
